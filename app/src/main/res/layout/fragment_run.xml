@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/startArea"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginStart="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/started"/>
+
+        <TextView
+            android:id="@+id/startedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/latitudeArea"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/startArea"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginStart="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/latitude"/>
+
+        <TextView
+            android:id="@+id/latitudeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/longitudeArea"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/latitudeArea"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginStart="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/longitude"/>
+
+        <TextView
+            android:id="@+id/longitudeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/altitudeArea"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/longitudeArea"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginStart="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/altitude"/>
+
+        <TextView
+            android:id="@+id/altitudeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/timeArea"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/altitudeArea"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginStart="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/elapsed_time"/>
+
+        <TextView
+            android:id="@+id/durationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonArea"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timeArea"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/run_startButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:text="@string/start"/>
+
+        <Button
+            android:id="@+id/run_stopButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:text="@string/stop"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
