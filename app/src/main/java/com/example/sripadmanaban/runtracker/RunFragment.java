@@ -14,6 +14,8 @@ import android.widget.TextView;
  */
 public class RunFragment extends Fragment {
 
+    private RunManager mRunManager;
+
     private Button mStartButton, mStopButton;
 
     private TextView mStartedTextView, mLatitudeTextView,
@@ -23,6 +25,7 @@ public class RunFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
+        mRunManager = RunManager.getInstance(getActivity());
     }
 
     @Override
@@ -36,8 +39,30 @@ public class RunFragment extends Fragment {
         mDurationTextView = (TextView) view.findViewById(R.id.durationTextView);
 
         mStartButton = (Button) view.findViewById(R.id.run_startButton);
+        mStartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mRunManager.startLocationUpdate();
+                updateUI();
+            }
+        });
+
         mStopButton = (Button) view.findViewById(R.id.run_stopButton);
+        mStopButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mRunManager.StopLocationUpdate();
+                updateUI();
+            }
+        });
 
         return view;
+    }
+
+    private void updateUI() {
+        boolean started = mRunManager.isTrackingRun();
+
+        mStartButton.setEnabled(!started);
+        mStopButton.setEnabled(started);
     }
 }
