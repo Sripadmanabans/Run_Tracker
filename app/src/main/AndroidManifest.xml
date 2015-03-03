@@ -24,7 +24,7 @@
 
         </activity>
 
-        <receiver android:name=".LocationReceiver"
+        <receiver android:name=".TrackingLocationReceiver"
             android:exported="true">
 
             <intent-filter>
